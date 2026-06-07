@@ -5,9 +5,9 @@
     - name: Remove filebeat, kibana, elasticsearch with purge
       apt:
         name:
-          - filebeat
-          - kibana
-          - elasticsearch
+          - promtail
+          - grafana
+          - loki
         state: absent
         purge: yes
         autoremove: yes
@@ -19,8 +19,9 @@
         path: "{{ item }}"
         state: absent
       loop:
-        - /etc/filebeat
-        - /etc/kibana
-        - /etc/elasticsearch
-        - /var/lib/filebeat
-        - /var/lib/elasticsearch
+        - /etc/promtail
+        - /etc/grafana
+        - /etc/loki
+        - /var/lib/promtail
+        - /var/lib/loki
+        - /var/lib/grafana

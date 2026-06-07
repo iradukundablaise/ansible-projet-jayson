@@ -3,20 +3,20 @@
 #  become: yes
 #  roles:
 #    - dns
-- name: Install Filebeat on all VMs
+- name: Install Promtail on all VMs
   hosts: all
   become: yes
   roles:
-    - filebeat
+    - promtail
 
-- name: Install Kibana on vm2-dc1
+- name: Install Grafana on vm2-dc1
   hosts: vm2-dc1
   become: yes
   roles:
-    - kibana
+    - grafana
 
-- name: Install Elasticsearch on vm1-dc2
+- name: Install Loki on vm1-dc2
   hosts: vm1-dc2
   become: yes
   roles:
-    - elasticsearch
+    - loki
