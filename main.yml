@@ -10,7 +10,7 @@
     - promtail
 
 - name: Install Grafana on vm2-dc1
-  hosts: vm2-dc1
+  hosts: vm1-dc2
   become: yes
   roles:
     - grafana
